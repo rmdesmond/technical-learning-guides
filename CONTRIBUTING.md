@@ -2,15 +2,24 @@
 
 ## How a guide is produced
 
-1. **Learning guide.** Run [the learning guide prompt](prompts/learning-guide-prompt.md)
-   for the subject. Work through the result yourself, typing every example,
-   and fix what breaks. Export it as `<subject>-learning-guide.pdf`.
-2. **Matn.** Run [the matn prompt](prompts/matn-prompt.md) on the finished
-   learning guide. Check that its chapters match the guide's chapters one to one.
-3. **Beyond the Basics.** Run [the Beyond the Basics prompt](prompts/beyond-the-basics-prompt.md),
-   starting from the learning guide's "Beyond the basics" roadmap.
-4. **Way Beyond the Basics.** Run [the Way Beyond the Basics prompt](prompts/way-beyond-the-basics-prompt.md)
-   on the Beyond the Basics guide.
+Guides are made in a Claude project. Put [`prompts/instructions.md`](prompts/instructions.md)
+in the project instructions and add [`prompts/learning-guide-prompt.md`](prompts/learning-guide-prompt.md)
+to the project files.
+
+1. **Introduction.** Ask "Someone doesn't know `<SKILL>` at all. How would you
+   introduce it to them?" Ask "and next?" until you're ready for the guide.
+2. **Learning guide.** Ask for the learning guide. Claude follows
+   `learning-guide-prompt.md` and keeps the conversation so far as the
+   opening chapters. Work through the result yourself, typing every example,
+   and fix what breaks. The file is `<skill>-learning-guide.pdf`.
+3. **Matn.** Ask for "the matn for `<SKILL>`". Claude builds it from the
+   learning guide, one chapter per guide chapter. Check that the chapters
+   match one to one. The file is `<skill>-matn.pdf`.
+4. **Beyond the Basics.** Ask for it when the learning guide's "Beyond the
+   basics" roadmap is where your projects are heading. The file is
+   `<skill>-beyond-the-basics-learning-guide.pdf`.
+5. **Way Beyond the Basics.** Ask for it after Beyond the Basics. The file is
+   `<skill>-way-beyond-the-basics-learning-guide.pdf`.
 
 A subject can stop at any step. Only the learning guide is required.
 

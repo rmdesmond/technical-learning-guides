@@ -89,14 +89,16 @@ learned a subject. A card helps you remember a subject. It does not teach it.
 
 ## How a guide is made
 
-Every subject starts with one prompt:
+Every subject starts with one question in a chat with Claude:
 
-> If someone doesn't know anything about *&lt;subject&gt;* at all, how would
-> you introduce them to it? And then write the learning guide for it.
+> Someone doesn't know *&lt;SKILL&gt;* at all. How would you introduce it to them?
 
-The other three guide types are built from that learning guide. The prompts
-for all four are in [`prompts/`](prompts). How a guide gets reviewed and
-added is in [CONTRIBUTING.md](CONTRIBUTING.md).
+You ask "and next?" as many times as you like, and then ask for the learning
+guide. [`prompts/learning-guide-prompt.md`](prompts/learning-guide-prompt.md)
+turns the conversation into the PDF. The other three guide types are built
+from that learning guide. [`prompts/instructions.md`](prompts/instructions.md)
+covers how Claude handles each request. How a guide gets reviewed and added
+is in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Reporting a mistake
 
