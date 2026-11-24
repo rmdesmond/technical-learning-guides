@@ -30,6 +30,9 @@ A subject can stop at any step. Only the learning guide is required.
    first.
 2. Add the subject's row to the README catalogue, or add a link to its existing row.
 3. Add a line to [CHANGELOG.md](CHANGELOG.md).
+4. Add the subject to `scripts/build-tracker.py` and rebuild the tracker
+   (see [Scripts](README.md#scripts)). If you added a group, update and
+   rebuild `START-HERE.pdf` with `scripts/build-start-here.py`.
 
 If a guide doesn't fit any existing group, the grouping is probably wrong.
 Fix the grouping first.
@@ -41,7 +44,9 @@ Fix the grouping first.
   `<subject>-way-beyond-the-basics-learning-guide.pdf`. Never rename a file
   once it is published.
 - Each subject lives in exactly one group folder.
-- Commit PDFs only. Keep the conversation and any build script out of the repo.
+- Commit a guide as a PDF only. Keep the conversation and the guide's own
+  build script out of the repo. `scripts/` is only for tools that work on
+  the repo as a whole.
 - To revise a guide, overwrite the file and add a CHANGELOG line. When a batch
   of changes lands, tag the repo with the month, for example `v2026.11`.
 - Short reference sheets go in `cards/`, never in `guides/`.

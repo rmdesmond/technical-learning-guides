@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# guidefind: list the guides whose file name contains a keyword.
+#
+# Usage: guidefind <topic>
+#   guidefind cmake      -> the CMake learning guide, matn and Beyond the Basics
+#   guidefind matn       -> every matn
+#   guidefind linux      -> Linux command line, Linux vs. RTOS, I2C on Linux
+#
+# Matching ignores case. Spaces in the topic count as hyphens, so
+# "guidefind beyond the basics" works. Works from any directory.
+
+set -euo pipefail
+
+if [[ $# -eq 0 || "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: guidefind <topic>" >&2
+    echo "Lists guides under guides/ whose file name contains <topic> (case-insensitive)." >&2
+    exit 2
+fi
+
+repo="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)"
+topic="$*"
+topic="${topic// /-}"
+
+matches="$(cd "$repo" && find guides -type f -name '*.pdf' -iname "*${topic}*" | sort)"
+
+if [[ -z "$matches" ]]; then
+    echo "No guide matches '$topic'." >&2
+    exit 1
+fi
+
+while IFS= read -r path; do
+    echo "$repo/$path"
+done <<< "$matches"
