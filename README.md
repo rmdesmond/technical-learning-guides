@@ -15,10 +15,16 @@ New to Git or GitHub? Open [START-HERE.pdf](START-HERE.pdf) first.
 | Learning guide | `<subject>-learning-guide.pdf` | The base guide. Starts from zero, covers one idea per chapter, and ends with a "Beyond the basics" roadmap. |
 | Matn | `<subject>-matn.pdf` | The skeleton of the learning guide in a few pages. It states without explaining, so you can memorize it and remember what the guide covered. |
 | Beyond the Basics | `<subject>-beyond-the-basics-learning-guide.pdf` | The next level, for someone who has finished the learning guide. |
-| Way Beyond the Basics | `<subject>-way-beyond-the-basics-learning-guide.pdf` | The level after that. None written yet. |
+| Way Beyond the Basics | `<subject>-way-beyond-the-basics-learning-guide.pdf` | The level after that. |
 
 Start with the learning guide. Use the matn to keep what you learned. Move on
 to Beyond the Basics when your projects need it.
+
+A subject's folder can also hold **topic guides**,
+`<topic>-learning-guide.pdf`, each a full learning guide on one part of the
+subject, such as move semantics in C++. A topic guide can have its own
+Beyond the Basics and Way Beyond the Basics guides. Read the subject's
+learning guide first.
 
 ## Catalogue
 
@@ -34,14 +40,14 @@ subject has its own folder, which holds every guide type written for it.
 | Markdown | [Guide](guides/1-foundations/markdown/markdown-learning-guide.pdf) | From an empty text file to a README, a wiki page and a set of docs. | None |
 | Git | [Guide](guides/1-foundations/git/git-learning-guide.pdf) · [Habit card](cards/git-habit-card.pdf) | From an empty folder to a confident contributor on a shared repository. | Linux command line |
 | Vim | [Guide](guides/1-foundations/vim/vim-learning-guide.pdf) | From "how do I quit this thing" to editing a real project fluently. | Linux command line |
-| AI | [Guide](guides/1-foundations/ai/ai-learning-guide.pdf) | From never having asked an AI a question to using one every day as a checked working partner. | None |
+| AI | [Guide](guides/1-foundations/ai/ai-learning-guide.pdf)<br>Topics: [AI agents](guides/1-foundations/ai/ai-agents-learning-guide.pdf) · [Claude Code](guides/1-foundations/ai/claude-code-learning-guide.pdf) ([Beyond the Basics](guides/1-foundations/ai/claude-code-beyond-the-basics-learning-guide.pdf), [Way Beyond the Basics](guides/1-foundations/ai/claude-code-way-beyond-the-basics-learning-guide.pdf)) | From never having asked an AI a question to using one every day as a checked working partner. | None |
 
 ### 2. Languages
 
 | Subject | Guides | Outcome | Prerequisites |
 |---|---|---|---|
 | C | [Guide](guides/2-languages/c/c-learning-guide.pdf) | From a blank file to a multi-file program that manages its own memory. | Linux command line |
-| C++ | [Guide](guides/2-languages/cpp/cpp-learning-guide.pdf) | From one compiled file to a multi-file program you can explain in a code review. | Some programming in any language |
+| C++ | [Guide](guides/2-languages/cpp/cpp-learning-guide.pdf)<br>Topics: [Memory leaks](guides/2-languages/cpp/memory-leaks-learning-guide.pdf) · [Rule of three](guides/2-languages/cpp/rule-of-three-learning-guide.pdf) · [Move semantics](guides/2-languages/cpp/move-semantics-learning-guide.pdf) · [Virtual functions](guides/2-languages/cpp/virtual-functions-learning-guide.pdf) | From one compiled file to a multi-file program you can explain in a code review. | Some programming in any language |
 | Systems programming | [Guide](guides/2-languages/systems-programming/systems-programming-learning-guide.pdf) | From a memory-managed language to a multi-threaded C tool you own every byte of. | A high-level language |
 
 ### 3. Build and test
@@ -61,7 +67,7 @@ subject has its own folder, which holds every guide type written for it.
 |---|---|---|---|
 | Virtual machines | [Guide](guides/4-systems-and-infra/vm/vm-learning-guide.pdf) | From "what is a VM?" to running, cloning and SSH-ing into disposable Linux machines. | Linux command line |
 | Docker | [Guide](guides/4-systems-and-infra/docker/docker-learning-guide.pdf) | From "it works on my machine" to a multi-container app you can ship anywhere. | Linux command line |
-| CI/CD pipelines | [Guide](guides/4-systems-and-infra/ci-cd-pipeline/ci-cd-pipeline-learning-guide.pdf) | From no automation to a pipeline that tests, builds, deploys and verifies on every change. | Git |
+| CI/CD pipelines | [Guide](guides/4-systems-and-infra/ci-cd-pipeline/ci-cd-pipeline-learning-guide.pdf)<br>Topics: [GitHub](guides/4-systems-and-infra/ci-cd-pipeline/github-learning-guide.pdf) · [GitHub Actions ci.yml](guides/4-systems-and-infra/ci-cd-pipeline/github-actions-ci-yml-learning-guide.pdf) | From no automation to a pipeline that tests, builds, deploys and verifies on every change. | Git |
 | Signed releases | [Guide](guides/4-systems-and-infra/signed-releases/signed-releases-learning-guide.pdf) | From never having heard of a signature to publishing and verifying signed releases with minisign. | Linux command line |
 
 ### 5. Web
@@ -133,7 +139,9 @@ python3 -m venv .venv
 ```
 
 When you add a subject, add it to the lists at the top of `build-tracker.py`
-and to `STAGES` in `build-binder-cover.py`.
+and to `STAGES` in `build-binder-cover.py`. When you add a topic guide, add it
+to `TOPICS` in `build-tracker.py` and to `STAGES` and `TOPIC_CHIPS` in
+`build-binder-cover.py`. `build-tracker.py` stops if a guide isn't listed.
 When you add a group, update the table in `build-start-here.py`.
 
 ## Reporting a mistake
