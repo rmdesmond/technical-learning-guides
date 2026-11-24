@@ -4,6 +4,8 @@ One line per guide added or revised, newest first.
 
 ## 2026-11-23
 
+- README credits the compiler; prompts/instructions.md points at
+  prompts/learning-guide-prompt.md.
 - Added cards/binder-cover.pdf, updated to show every guide in seven stages.
 - Added scripts/: guidefind, build-start-here.py, build-tracker.py and
   build-binder-cover.py.
