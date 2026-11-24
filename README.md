@@ -1,5 +1,7 @@
 # Technical Learning Guides
 
+Compiled by Randall Desmond, rdesmond@rmd3.com, by directing Claude AI.
+
 Self-paced guides for people who know nothing about a technical subject yet.
 Each guide takes you to a working, employable level by building one example
 that grows from chapter to chapter.
