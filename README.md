@@ -85,6 +85,7 @@ learned a subject. A card helps you remember a subject. It does not teach it.
 
 - [Git habit card](cards/git-habit-card.pdf)
 - [Learning guide tracker](cards/learning-guide-tracker.pdf), a printable progress sheet
+- [Binder cover](cards/binder-cover.pdf), a printable cover for a binder of the guides
 
 ## How a guide is made
 
@@ -98,6 +99,40 @@ turns the conversation into the PDF. The other three guide types are built
 from that learning guide. [`prompts/instructions.md`](prompts/instructions.md)
 covers how Claude handles each request. How a guide gets reviewed and added
 is in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Scripts
+
+[`scripts/`](scripts) holds tools for working with the repo.
+
+| Script | What it does |
+|---|---|
+| `guidefind <topic>` | Lists every guide whose file name contains the topic, ignoring case. `guidefind cmake` finds the CMake learning guide, matn and Beyond the Basics guide. `guidefind matn` finds every matn. |
+| `build-start-here.py` | Rebuilds `START-HERE.pdf`. Run it after adding a group or changing the reading order. |
+| `build-tracker.py` | Rebuilds `cards/learning-guide-tracker.pdf` from the guides in `guides/`. Run it after adding a guide. |
+| `build-binder-cover.py` | Rebuilds `cards/binder-cover.pdf`. Run it after adding a guide. |
+
+`guidefind` works from any directory. To run it by name, link it into a
+directory on your `PATH`:
+
+```sh
+ln -s "$PWD/scripts/guidefind" ~/bin/guidefind   # run from the repo root
+guidefind linux
+open "$(guidefind cmake-matn)"                   # macOS: open the match
+```
+
+The build scripts need Python 3 and two packages:
+
+```sh
+python3 -m venv .venv
+.venv/bin/pip install -r scripts/requirements.txt
+.venv/bin/python scripts/build-tracker.py
+.venv/bin/python scripts/build-start-here.py
+.venv/bin/python scripts/build-binder-cover.py
+```
+
+When you add a subject, add it to the lists at the top of `build-tracker.py`
+and to `STAGES` in `build-binder-cover.py`.
+When you add a group, update the table in `build-start-here.py`.
 
 ## Reporting a mistake
 
