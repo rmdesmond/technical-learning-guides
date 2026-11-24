@@ -99,6 +99,37 @@ from that learning guide. [`prompts/instructions.md`](prompts/instructions.md)
 covers how Claude handles each request. How a guide gets reviewed and added
 is in [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Scripts
+
+[`scripts/`](scripts) holds tools for working with the repo.
+
+| Script | What it does |
+|---|---|
+| `guidefind <topic>` | Lists every guide whose file name contains the topic, ignoring case. `guidefind cmake` finds the CMake learning guide, matn and Beyond the Basics guide. `guidefind matn` finds every matn. |
+| `build-start-here.py` | Rebuilds `START-HERE.pdf`. Run it after adding a group or changing the reading order. |
+| `build-tracker.py` | Rebuilds `cards/learning-guide-tracker.pdf` from the guides in `guides/`. Run it after adding a guide. |
+
+`guidefind` works from any directory. To run it by name, link it into a
+directory on your `PATH`:
+
+```sh
+ln -s "$PWD/scripts/guidefind" ~/bin/guidefind   # run from the repo root
+guidefind linux
+open "$(guidefind cmake-matn)"                   # macOS: open the match
+```
+
+The two build scripts need Python 3 and two packages:
+
+```sh
+python3 -m venv .venv
+.venv/bin/pip install -r scripts/requirements.txt
+.venv/bin/python scripts/build-tracker.py
+.venv/bin/python scripts/build-start-here.py
+```
+
+When you add a subject, add it to the lists at the top of `build-tracker.py`.
+When you add a group, update the table in `build-start-here.py`.
+
 ## Reporting a mistake
 
 Open an issue. Put the guide name and chapter number in the title, for example
