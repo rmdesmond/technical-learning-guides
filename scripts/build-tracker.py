@@ -108,6 +108,6 @@ for _ in range(nblank):
 c.setFont("Helvetica", 6.5); c.setFillColor(grey)
 n_matn = sum("Matn" in r[0] for r in rows); n_beyond = sum("Beyond" in r[0] for r in rows)
 c.drawString(L, 30, f"{n_base} learning guides, {n_matn} matns and {n_beyond} Beyond the Basics guide{'' if n_beyond == 1 else 's'} as of {DATE}. "
-             "Cards (Git Habit Card, this tracker) and START-HERE.pdf are references, not guides, and aren't tracked here.")
+             "Cards (Git Habit Card, binder cover, this tracker) and START-HERE.pdf are references, not guides, and aren't tracked here.")
 c.save()
 print(f"wrote {out}: {len(rows)} rows")

@@ -30,7 +30,8 @@ A subject can stop at any step. Only the learning guide is required.
    first.
 2. Add the subject's row to the README catalogue, or add a link to its existing row.
 3. Add a line to [CHANGELOG.md](CHANGELOG.md).
-4. Add the subject to `scripts/build-tracker.py` and rebuild the tracker
+4. Add the subject to `scripts/build-tracker.py` and `scripts/build-binder-cover.py`,
+   and rebuild the tracker and binder cover
    (see [Scripts](README.md#scripts)). If you added a group, update and
    rebuild `START-HERE.pdf` with `scripts/build-start-here.py`.
 
