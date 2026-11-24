@@ -4,6 +4,11 @@ One line per guide added or revised, newest first.
 
 ## 2026-11-23
 
+- Added 10 topic guides: AI agents and Claude Code (plus Beyond and Way
+  Beyond the Basics) under AI; memory leaks, rule of three, move semantics and
+  virtual functions under C++; GitHub and GitHub Actions ci.yml under CI/CD.
+- learning-guide-tracker.pdf now lists topic guides under their subject and
+  continues guides longer than 40 pages on an extra row.
 - README credits the compiler; prompts/instructions.md points at
   prompts/learning-guide-prompt.md.
 - Added cards/binder-cover.pdf, updated to show every guide in seven stages.
