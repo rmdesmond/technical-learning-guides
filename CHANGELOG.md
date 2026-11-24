@@ -2,6 +2,12 @@
 
 One line per guide added or revised, newest first.
 
+## 2026-11-24
+
+- README lists the topic guides under AI, C++ and CI/CD and explains topic
+  guides; CONTRIBUTING covers their file names.
+- binder-cover.pdf shows the topic guides as outlined chips.
+
 ## 2026-11-23
 
 - Added 10 topic guides: AI agents and Claude Code (plus Beyond and Way

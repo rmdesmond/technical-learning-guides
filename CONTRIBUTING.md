@@ -30,8 +30,8 @@ A subject can stop at any step. Only the learning guide is required.
    first.
 2. Add the subject's row to the README catalogue, or add a link to its existing row.
 3. Add a line to [CHANGELOG.md](CHANGELOG.md).
-4. Add the subject to `scripts/build-tracker.py` and `scripts/build-binder-cover.py`,
-   and rebuild the tracker and binder cover
+4. Add the subject or topic guide to `scripts/build-tracker.py` and
+   `scripts/build-binder-cover.py`, and rebuild the tracker and binder cover
    (see [Scripts](README.md#scripts)). If you added a group, update and
    rebuild `START-HERE.pdf` with `scripts/build-start-here.py`.
 
@@ -42,8 +42,10 @@ Fix the grouping first.
 
 - File names are lowercase and hyphenated: `<subject>-learning-guide.pdf`,
   `<subject>-matn.pdf`, `<subject>-beyond-the-basics-learning-guide.pdf`,
-  `<subject>-way-beyond-the-basics-learning-guide.pdf`. Never rename a file
-  once it is published.
+  `<subject>-way-beyond-the-basics-learning-guide.pdf`. A topic guide inside
+  a subject folder uses the topic in place of the subject, for example
+  `cpp/move-semantics-learning-guide.pdf`. Never rename a file once it is
+  published.
 - Each subject lives in exactly one group folder.
 - Commit a guide as a PDF only. Keep the conversation and the guide's own
   build script out of the repo. `scripts/` is only for tools that work on
