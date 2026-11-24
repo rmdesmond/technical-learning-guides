@@ -60,7 +60,7 @@ subject has its own folder, which holds every guide type written for it.
 | Virtual machines | [Guide](guides/4-systems-and-infra/vm/vm-learning-guide.pdf) | From "what is a VM?" to running, cloning and SSH-ing into disposable Linux machines. | Linux command line |
 | Docker | [Guide](guides/4-systems-and-infra/docker/docker-learning-guide.pdf) | From "it works on my machine" to a multi-container app you can ship anywhere. | Linux command line |
 | CI/CD pipelines | [Guide](guides/4-systems-and-infra/ci-cd-pipeline/ci-cd-pipeline-learning-guide.pdf) | From no automation to a pipeline that tests, builds, deploys and verifies on every change. | Git |
-| Signed releases | [Guide](guides/4-systems-and-infra/signed-releases/signed-releases-learning-guide.pdf) · [sha256sum card](cards/sha256sum-explained.png) | From never having heard of a signature to publishing and verifying signed releases with minisign. | Linux command line |
+| Signed releases | [Guide](guides/4-systems-and-infra/signed-releases/signed-releases-learning-guide.pdf) | From never having heard of a signature to publishing and verifying signed releases with minisign. | Linux command line |
 
 ### 5. Web
 
@@ -84,7 +84,6 @@ subject has its own folder, which holds every guide type written for it.
 learned a subject. A card helps you remember a subject. It does not teach it.
 
 - [Git habit card](cards/git-habit-card.pdf)
-- [sha256sum explained](cards/sha256sum-explained.png)
 - [Learning guide tracker](cards/learning-guide-tracker.pdf), a printable progress sheet
 
 ## How a guide is made
